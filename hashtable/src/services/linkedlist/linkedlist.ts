@@ -5,10 +5,10 @@ export default class LinkedList {
 
   constructor() {}
 
-  public append(data: number): void {
+  public append(data: any): Node {
     if (this.head === undefined) {
       this.head = new Node(data);
-      return;
+      return this.head;
     }
 
     let current: Node = this.head;
@@ -18,15 +18,17 @@ export default class LinkedList {
     }
 
     current.next = new Node(data);
+
+    return current.next;
   }
 
-  public prepend(data: number): void {
+  public prepend(data: any): void {
     const newHead = new Node(data);
     newHead.next = this.head;
     this.head = newHead;
   }
 
-  public deleteWithValue(data: number): void {
+  public deleteWithValue(data: any): void {
     if (this.head === undefined) return;
 
     if (this.head.data === data) {
