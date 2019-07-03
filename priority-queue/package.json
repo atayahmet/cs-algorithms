@@ -1,0 +1,26 @@
+{
+  "name": "priority-queue",
+  "version": "1.0.0",
+  "description": "Priority queue algorithm with heap sort.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npm run compile && mocha -r ts-node/register test/**/*.spec.ts",
+    "compile": "tsc src/*.ts  --outDir dist --pretty"
+  },
+  "author": "Ahmet ATAY",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "^4.1.4",
+    "@types/mocha": "^5.2.5",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.0.3"
+  },
+  "dependencies": {
+    "heap": "file:../heap"
+  }
+}
