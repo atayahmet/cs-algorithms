@@ -14,14 +14,13 @@ export default abstract class Heap {
     return this.size;
   }
 
-  public poll(): number {
+  public poll(): any {
     if (this.size === 0) throw 'Value not found';
 
     const item = this.heapBox[0];
 
     this.heapBox[0] = this.heapBox[--this.size];
-
-    delete this.heapBox[this.size];
+    this.heapBox.splice(this.size, 1);
 
     this.heapifyDown();
 
